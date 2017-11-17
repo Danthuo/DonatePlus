@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="blueD0">#01A79D</color>
+    <color name="blueD1">#01BEAC</color>
+    <color name="blueD2">#02DCC7</color>
+    <color name="blueD3">#02E7D0</color>
+    <color name="blueD4">#29FEE9</color>
+    <color name="blueD5">#72FEF0</color>
+    <color name="white">#FFFFFF</color>
+    <color name="hint_white">#DBDBDB</color>
+
+    <color name="grayLight">#fafafa</color>
+    <color name="startBlue">#01BEAC</color>
+    <color name="endBlue">#02E7D0</color>
+</resources>

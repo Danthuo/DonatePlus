@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_notifications"
+            android:icon="@drawable/ic_notifications_black_24dp"
+            android:title="@string/amd_notifications"
+            android:textSize="@dimen/regular_font_size"
+            android:textColor="@color/blueD0"
+            android:fontFamily="@font/aileron_light"/>
+        <item
+            android:id="@+id/nav_my_donations"
+            android:icon="@drawable/ic_done_black_24dp"
+            android:title="@string/amd_donations"
+            android:textSize="@dimen/regular_font_size"
+            android:textColor="@color/blueD0"
+            android:fontFamily="@font/aileron_light"/>
+        <item
+            android:id="@+id/nav_homes"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="@string/amd_homes"
+            android:textSize="@dimen/regular_font_size"
+            android:textColor="@color/blueD0"
+            android:fontFamily="@font/aileron_light"/>
+        <item
+            android:id="@+id/nav_donate"
+            android:icon="@drawable/ic_donateicon"
+            android:title="@string/amd_donate"
+            android:textSize="@dimen/regular_font_size"
+            android:textColor="@color/blueD0"
+            android:fontFamily="@font/aileron_light"/>
+    </group>
+
+    <item android:title="Social">
+        <menu>
+            <item
+                android:id="@+id/nav_rewards"
+                android:icon="@drawable/ic_trophy"
+                android:title="@string/amd_rewards"
+                android:textSize="@dimen/regular_font_size"
+                android:textColor="@color/blueD0"
+                android:fontFamily="@font/aileron_light"/>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/amd_share"
+                android:textSize="@dimen/regular_font_size"
+                android:textColor="@color/blueD0"
+                android:fontFamily="@font/aileron_light"/>
+        </menu>
+    </item>
+
+    <item android:title="Global Preferences">
+        <menu>
+            <item
+                android:id="@+id/nav_manage"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="@string/amd_settings"
+                android:textSize="@dimen/regular_font_size"
+                android:textColor="@color/blueD0"
+                android:fontFamily="@font/aileron_light"/>
+            <item
+                android:id="@+id/nav_about"
+                android:title="@string/amd_about"
+                android:textSize="@dimen/regular_font_size"
+                android:textColor="@color/blueD0"
+                android:fontFamily="@font/aileron_light"/>
+
+        </menu>
+    </item>
+
+</menu>

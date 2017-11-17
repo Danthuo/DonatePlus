@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <ImageView
+        android:id="@+id/Login_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:src="@drawable/donate_plus_logo"
+        android:layout_marginTop="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/Login_tagline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/DP_Tagline_Text"
+        android:textColor="@color/blueD1"
+        android:textSize="15dp"
+        android:fontFamily="@font/aileron_light"
+        android:textAlignment="center"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/Login_logo" />
+
+    <TextView
+        android:id="@+id/Login_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textColor="@color/blueD1"
+        android:textSize="40dp"
+        android:fontFamily="@font/aileron_ultra_light"
+        android:textAlignment="center"
+        android:layout_marginTop="60dp"
+        android:layout_below="@id/Login_tagline" />
+
+    <EditText
+        android:id="@+id/Login_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:textColorHint="@color/white"
+        android:textSize="@dimen/regular_font_size"
+        android:fontFamily="@font/aileron_light"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:background="@color/blueD1"
+        android:padding="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/Login_login"/>
+
+    <EditText
+        android:id="@+id/Login_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textWebPassword"
+        android:textColorHint="@color/white"
+        android:textSize="@dimen/regular_font_size"
+        android:fontFamily="@font/aileron_light"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:background="@color/blueD2"
+        android:padding="15dp"
+        android:layout_below="@id/Login_username"/>
+
+    <Button
+        android:id="@+id/Login_sign_in"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign In"
+        android:textSize="@dimen/regular_font_size"
+        android:textColor="@color/white"
+        android:fontFamily="@font/aileron_bold"
+        android:background="@color/blueD3"
+        android:layout_margin="0dp"
+        android:layout_below="@id/Login_password"
+        style="?android:attr/borderlessButtonStyle" />
+
+    <TextView
+        android:id="@+id/Login_no_acc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account?"
+        android:textColor="@color/blueD1"
+        android:textSize="15dp"
+        android:fontFamily="@font/aileron_light"
+        android:textAlignment="center"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/Login_sign_in" />
+
+    <Button
+        android:id="@+id/Login_sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:textSize="@dimen/regular_font_size"
+        android:textColor="@color/blueD0"
+        android:fontFamily="@font/aileron_bold"
+        android:background="@color/white"
+        android:layout_marginBottom="25dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/Login_no_acc"
+        style="?android:attr/borderlessButtonStyle" />
+</RelativeLayout>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "563108172210",
+    "firebase_url": "https://donateplus-40c8b.firebaseio.com",
+    "project_id": "donateplus-40c8b",
+    "storage_bucket": "donateplus-40c8b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563108172210:android:a0697fbd99d3c514",
+        "android_client_info": {
+          "package_name": "bbitb.com.donateplus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "563108172210-49f0hqqpiqeboiasfvb8ufb241b6n45h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCg7abBJKkSoyemedO1Q-d2P-03ex352Z0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
