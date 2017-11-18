@@ -1,10 +1,13 @@
 package bbitb.com.donateplus;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentManager;
+import android.text.TextUtils;
 import android.util.Log;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,11 +17,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, HomesList.OnFragmentInteractionListener {
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
+public class MainActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener, HomesList.OnFragmentInteractionListener
+                    {
+
+
+    private FirebaseAuth firebaseAuth;
+
+    private TextView textViewUserEmail;
 
 
     @Override
@@ -27,6 +41,34 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+
+        if(firebaseAuth.getCurrentUser() == null){
+            //Login Activity here if user is not logged in
+            finish();
+            startActivity(new Intent(this, Login.class));
+
+        }else {
+            FirebaseUser user = firebaseAuth.getCurrentUser();
+            String displayEmail = user.getEmail();
+
+            // NavigationView
+            NavigationView mNavigationView = (NavigationView) findViewById(R.id.nav_view);
+            View mHeaderView =  mNavigationView.inflateHeaderView(R.layout.nav_header_main);
+
+            //View
+            textViewUserEmail = (TextView) mHeaderView.findViewById(R.id.textViewUserEmail);
+
+            //Set Email
+            textViewUserEmail.setText(displayEmail);
+        }
+
+
+        //buttonLogout = (Button) findViewById(R.id.buttonLogout);
+        //buttonLogout.setOnClickListener(this);
+
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -140,4 +182,6 @@ public class MainActivity extends AppCompatActivity
     public void onFragmentInteraction(Uri uri) {
 
     }
+
+
 }

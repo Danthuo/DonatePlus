@@ -1,12 +1,16 @@
 package bbitb.com.donateplus;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 
 /**
@@ -17,7 +21,15 @@ import android.view.ViewGroup;
  * Use the {@link Settings#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Settings extends Fragment {
+public class Settings extends Fragment implements View.OnClickListener {
+
+    private FirebaseAuth firebaseAuth;
+    private Button buttonLogout;
+
+
+
+
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -58,13 +70,22 @@ public class Settings extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        firebaseAuth = FirebaseAuth.getInstance();
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false);
+       //return inflater.inflate(R.layout.fragment_settings, container, false);
+
+
+        View view = inflater.inflate(R.layout.fragment_settings, container, false);
+        buttonLogout = (Button) view.findViewById(R.id.buttonLogout);
+        buttonLogout.setOnClickListener(this);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -77,12 +98,7 @@ public class Settings extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
+
     }
 
     @Override
@@ -104,5 +120,16 @@ public class Settings extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        if(v == buttonLogout){
+            firebaseAuth.signOut();
+            getActivity().finish();
+            startActivity(new Intent(getContext(), Login.class));
+        }
+
     }
 }

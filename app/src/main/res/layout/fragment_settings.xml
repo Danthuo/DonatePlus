@@ -5,10 +5,17 @@
     tools:context="bbitb.com.donateplus.Settings">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:textSize="60sp"
+    <Button
+        android:id="@+id/buttonLogout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Settings" />
+        android:layout_height="wrap_content"
+        android:text="Log Out"
+        android:textSize="@dimen/regular_font_size"
+        android:textColor="@color/white"
+        android:fontFamily="@font/aileron_bold"
+        android:background="@color/blueD3"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="0dp"
+        style="?android:attr/borderlessButtonStyle" />
 
 </FrameLayout>
