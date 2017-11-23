@@ -1,12 +1,15 @@
 package bbitb.com.donateplus;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 /**
@@ -17,15 +20,18 @@ import android.view.ViewGroup;
  * Use the {@link Donate#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Donate extends Fragment {
+public class Donate extends Fragment{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    Context context;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private String mParam3;
 
     private OnFragmentInteractionListener mListener;
 
@@ -57,6 +63,7 @@ public class Donate extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+            mParam3 = getArguments().getString("InfoTitle");
         }
     }
 
@@ -64,7 +71,16 @@ public class Donate extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_donate, container, false);
+        //return inflater.inflate(R.layout.fragment_donate, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_donate, container, false);
+        TextView infoTitle = view.findViewById(R.id.textView_infoTitle);
+        context = getActivity();
+        //Toast.makeText(context,"We are Here " + mParam3,Toast.LENGTH_SHORT).show();
+        infoTitle.setText(mParam3);
+
+        return view;
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event

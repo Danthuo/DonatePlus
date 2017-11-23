@@ -1,0 +1,85 @@
+<FrameLayout
+
+    android:layout_width="match_parent"
+    android:id="@+id/map_frame_layout"
+
+    android:layout_height="match_parent"
+
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <bbitb.com.donateplus.MapWrapperLayout
+        android:id="@+id/map_relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            tools:context="bbitb.com.donateplus.MapsActivity" />
+    </bbitb.com.donateplus.MapWrapperLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+        xmlns:tools="http://schemas.android.com/tools"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical">
+
+        <Button
+
+            android:id="@+id/btnRestaurant"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:text="Nearby Malls"
+
+            android:textColor="@color/white"
+
+            android:background="@color/blueD3"/>
+
+        <!--<Button-->
+
+        <!--android:id="@+id/btnHospital"-->
+
+        <!--android:layout_width="wrap_content"-->
+
+        <!--android:layout_height="wrap_content"-->
+
+        <!--android:text="Nearby Hospitals" />-->
+
+        <!--<Button-->
+
+        <!--android:id="@+id/btnShoppingMalls"-->
+
+        <!--android:layout_width="wrap_content"-->
+
+        <!--android:layout_height="wrap_content"-->
+
+        <!--android:text="Nearby Malls" />-->
+
+        <TextView
+
+            android:id="@+id/tv_lat"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content" />
+
+        <TextView
+
+            android:id="@+id/tv_lng"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</FrameLayout>

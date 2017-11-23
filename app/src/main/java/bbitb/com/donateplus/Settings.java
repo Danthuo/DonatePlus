@@ -16,7 +16,7 @@ import com.google.firebase.auth.FirebaseAuth;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Settings.OnFragmentInteractionListener} interface
+ * {@link Settings.OnFragmentInteractionListener} interf
  * to handle interaction events.
  * Use the {@link Settings#newInstance} factory method to
  * create an instance of this fragment.

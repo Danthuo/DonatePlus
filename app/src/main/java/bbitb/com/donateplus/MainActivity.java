@@ -62,6 +62,8 @@ public class MainActivity extends AppCompatActivity
 
             //Set Email
             textViewUserEmail.setText(displayEmail);
+
+
         }
 
 
@@ -79,6 +81,8 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+
+        Fragment myfragment = null;
 
     }
 
