@@ -1,12 +1,16 @@
 package bbitb.com.donateplus;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,7 +28,13 @@ import java.util.ArrayList;
  * Use the {@link HomesList#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomesList extends Fragment {
+public class HomesList extends ListFragment {
+
+
+    //creating an instance of the list view
+    private ListView mlistview;
+
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -70,8 +80,35 @@ public class HomesList extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_homes_list, container, false);
+        mlistview = (ListView) view.findViewById(android.R.id.list);
+
+        //1
+        final ArrayList<ChildrensHomes> homeList = ChildrensHomes.getChildrensHomesFromFile("homes.json", getContext());
+
+
+        mlistview.setAdapter(new HomeAdapter(getContext(), homeList));
+        mlistview.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                ChildrensHomes selectedHome = homeList.get(position);
+
+                Intent detailIntent = new Intent(getContext(), HomeProfile.class);
+
+                detailIntent.putExtra("title", selectedHome.title);
+                detailIntent.putExtra("url", selectedHome.instructionUrl);
+
+                startActivity(detailIntent);
+            }
+        });
+
+        return view;
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_homes_list, container, false);
+        //return inflater.inflate(R.layout.fragment_homes_list, container, false);
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event

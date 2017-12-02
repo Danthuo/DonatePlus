@@ -1,0 +1,123 @@
+{
+  "homes": [
+    {
+      "title": "Nyumbani",
+      "image" : "http://newlifehometrust.org/images/logo.png",
+      "url": "http://newlifehometrust.org/",
+      "description": "Caring with Compassion",
+      "phone": "+254 722 406064",
+      "email": "info@newlifehometrust.org",
+	  "longitude": "-1.288935", 
+	  "latitude": "36.787414"
+	
+    },
+
+    {
+      "title": "Sos Children Villages Kenya",
+      "image" : "http://www.sos-childrensvillageskenya.org/images/sos_uploads/banner/active/tpa_picture.jpg",
+      "url": "http://www.sos-childrensvillageskenya.org/",
+      "description": "Caring with Compassion",
+      "phone": "+254 725 455 554",
+      "email": "info@soskenya.org",
+	  "longitude": "-1.294214", 
+	  "latitude": "36.790503"
+	
+    },
+
+    {
+      "title": "Happy Life Childrens Home",
+      "image" : "http://happylifechildrenshome.com/uploads/3/4/0/7/34079635/1421766.jpg?135",
+      "url": "http://happylifechildrenshome.com/index.html",
+      "description": "Caring with Compassion",
+      "phone": "+254 714 593926",
+      "email": "happylifechildrenshome@gmail.com",
+	  "longitude": "-1.215828", 
+	  "latitude": "36.886063"
+	
+    },
+
+    {
+      "title": "Grace Children's Centre",
+      "image" : "http://www.christianministriesinafrica.org/templates/general_commerce/images/s5_logo.png",
+      "url": "http://www.christianministriesinafrica.org/",
+      "description": "Righteousness and Relationship: With God and With One Another",
+      "phone": "+254 706 521197",
+      "email": "jennifer.hatley@christianministriesinafrica.org",
+	  "longitude": "-1.359162", 
+	  "latitude": "36.725963"
+	
+    },
+
+    {
+      "title": "Imani Childrens Home",
+      "image" : "https://imanikids.org/new/images/contact.png",
+      "url": "https://imanikids.org/new/",
+      "description": "If you want to change the world change the kids",
+      "phone": "+254 716 630900",
+      "email": "imanichild@gmail.com",
+	  "longitude": "-1.282010", 
+	  "latitude": "36.915857"
+	
+    },
+
+    {
+      "title": "Childrens Garden Home",
+      "image" : "http://www.childrensgardenhome.org/images/logo_cgh.png",
+      "url": "http://www.childrensgardenhome.org/",
+      "description": "Caring with Compassion",
+      "phone": "+254 721 308678",
+      "email": "contactus@childrensgardenhome.org",
+	  "longitude": "-1.276024", 
+	  "latitude": "36.733860"
+	
+    },
+
+    {
+      "title": "Havilla Children's Home",
+      "image" : "http://www.havillachildren.org/images/gallery-havillafamily.png",
+      "url": "http://www.havillachildren.org/",
+      "description": "A leading voice for children",
+      "phone": "+254 720 019 601",
+      "email": "havillachildren@yahoo.com",
+	  "longitude": "-1.227515", 
+	  "latitude": "36.932013"
+	
+    },
+
+    {
+      "title": "Kwetu Home of Peace",
+      "image" : "http://www.kwetuhome.org/img/logonew.jpg",
+      "url": "http://www.kwetuhome.org/",
+      "description": "Love is to share",
+      "phone": "+254 727 522 152",
+      "email": "kwetuhomes@yahoo.com",
+	  "longitude": "-1.309571", 
+	  "latitude": "36.811777"
+	
+    },
+
+    {
+      "title": "Nuru Africa Children's Home & Rescue Center",
+      "image" : "http://nuruafrica.com/wp-content/uploads/2013/10/volunteer_thumb.png",
+      "url": "http://www.nuruafrica.com",
+      "description": "Striving to achieve lasting improvement basic quality of life of vulnerable children and youth",
+      "phone": "+254 705 944 466",
+      "email": "nuruafrica@hotmail.com",
+	  "longitude": "-1.276584", 
+	  "latitude": "36.673390"
+	
+    },
+
+    {
+      "title": "Nyumbani",
+      "image" : "http://newlifehometrust.org/images/logo.png",
+      "url": "http://newlifehometrust.org/",
+      "description": "Caring with Compassion",
+      "phone": "+254 722 406064",
+      "email": "info@newlifehometrust.org",
+	  "longitude": "-1.2825842",
+	  "latitude": "36.7877550"
+	
+    }
+  ]
+}

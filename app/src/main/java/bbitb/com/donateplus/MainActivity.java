@@ -83,6 +83,17 @@ public class MainActivity extends AppCompatActivity
 
 
         Fragment myfragment = null;
+        Class fragmentClass = HomesList.class;
+
+        try {
+            myfragment = (Fragment) fragmentClass.newInstance();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.fLcontent,myfragment).commit();
 
     }
 

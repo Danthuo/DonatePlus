@@ -134,6 +134,7 @@
                 android:layout_height="30dp"
                 android:src="@drawable/ic_email_black_24dp"/>
             <TextView
+                android:id="@+id/profileEmail"
                 android:fontFamily="@font/aileron_ultra_light"
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"
@@ -155,6 +156,7 @@
                 android:layout_height="30dp"
                 android:src="@drawable/ic_phone_android_black_24dp"/>
             <TextView
+                android:id="@+id/profilePhone"
                 android:fontFamily="@font/aileron_ultra_light"
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"
