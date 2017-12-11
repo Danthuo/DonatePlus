@@ -92,8 +92,5 @@
         android:textSize="15dp"
         android:textColor="@color/blueD1"
         android:fontFamily="@font/aileron_light"
-        android:layout_marginTop="0dp"/>
-
-
-
+        android:layout_marginTop="20dp"/>
 </RelativeLayout>
