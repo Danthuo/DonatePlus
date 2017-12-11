@@ -196,7 +196,7 @@ public class Settings extends Fragment implements View.OnClickListener {
                 editTextName.setText(user.getDisplayName());
 
             }else {
-                textViewName.setText("Apollo User");
+                textViewName.setText("Donate+ User");
                 editTextName.setText(" ");
             }
         }
