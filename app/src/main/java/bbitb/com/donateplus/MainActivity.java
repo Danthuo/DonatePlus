@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity
             fragmentClass = HomesList.class;
 
         } else if (id == R.id.nav_donate) {
-            fragmentClass = MapsActivity.class;
+            fragmentClass = Donate.class;
 
         } else if (id == R.id.nav_rewards) {
             fragmentClass = Rewards.class;
