@@ -100,15 +100,12 @@
                         android:layout_height="wrap_content"
                         android:text="Locations"
                         android:textSize="20sp"/>
-                    <TextView
-                        android:fontFamily="@font/aileron_ultra_light"
+                    <ImageButton
+                        android:id="@+id/imgLocation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="15"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:paddingTop="10dp"
-                        android:textColor="@color/startBlue"/>
+                        android:src="@drawable/ic_location"/>
+
                 </LinearLayout>
 
             </LinearLayout>
@@ -134,6 +131,7 @@
                 android:layout_height="30dp"
                 android:src="@drawable/ic_email_black_24dp"/>
             <TextView
+                android:id="@+id/profileEmail"
                 android:fontFamily="@font/aileron_ultra_light"
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"
@@ -155,6 +153,7 @@
                 android:layout_height="30dp"
                 android:src="@drawable/ic_phone_android_black_24dp"/>
             <TextView
+                android:id="@+id/profilePhone"
                 android:fontFamily="@font/aileron_ultra_light"
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"
@@ -179,11 +178,12 @@
             <TextView
                 android:fontFamily="@font/aileron_ultra_light"
                 android:textStyle="bold"
+                android:id="@+id/about_us"
                 android:layout_gravity="center_vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="20dp"
-                android:text="About Us"/>
+                android:text=""/>
         </LinearLayout>
 
     </LinearLayout>

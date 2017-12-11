@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity
             fragmentClass = HomesList.class;
 
         } else if (id == R.id.nav_donate) {
-            fragmentClass = Donate.class;
+            fragmentClass = MapsActivity.class;
 
         } else if (id == R.id.nav_rewards) {
             fragmentClass = Rewards.class;
@@ -150,6 +150,7 @@ public class MainActivity extends AppCompatActivity
             fragmentClass = Settings.class;
 
         } else if (id == R.id.nav_share) {
+            fragmentClass = Share.class;
 
         } else if (id == R.id.nav_about) {
             fragmentClass = AboutUs.class;

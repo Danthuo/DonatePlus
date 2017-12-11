@@ -31,6 +31,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
+        <activity android:name=".HomeProfile" />
         <activity android:name=".Login" />
         <activity android:name=".SignUp" />
 
@@ -49,7 +50,10 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".Test"></activity>
+        <activity android:name=".Test" />
+        <activity
+            android:name=".HomeMap"
+            android:label="@string/title_activity_home_map"></activity>
     </application>
 
 </manifest>

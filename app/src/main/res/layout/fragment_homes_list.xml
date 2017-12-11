@@ -4,11 +4,6 @@
     android:layout_height="match_parent"
     tools:context="bbitb.com.donateplus.HomesList">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="HOME"
-            android:textSize="60dp"/>
 
         <ListView
             android:id="@+id/homes_list_view"
