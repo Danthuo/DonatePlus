@@ -123,6 +123,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
 
         Fragment myfragment = null;
+        Intent intent = null;
         Class fragmentClass = HomesList.class;
 
 
@@ -141,8 +142,8 @@ public class MainActivity extends AppCompatActivity
             fragmentClass = HomesList.class;
 
         } else if (id == R.id.nav_donate) {
-            fragmentClass = Donate.class;
-
+            intent = new Intent(this, MapsActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_rewards) {
             fragmentClass = Rewards.class;
 
