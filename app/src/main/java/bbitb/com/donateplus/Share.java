@@ -29,6 +29,7 @@ public class Share extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     String textmessage;
+    String invite;
     PackageManager packageManager = getPackageManager();
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -86,12 +87,12 @@ public class Share extends Fragment {
 
                 textmessage = "Hi there! Put a smile today on someones face by simply going to the playstore and downloading DonatePlus " +
                         "app and making a worthy donation to a needy child! :)";
-
+                invite = "Invite a friend via...";
                 Intent sendintent = new Intent();
                 sendintent.setAction(Intent.ACTION_SEND);
                 sendintent.putExtra(Intent.EXTRA_TEXT,textmessage);
                 sendintent.setType("text/plain");
-                startActivity(Intent.createChooser(sendintent, textmessage));
+                startActivity(Intent.createChooser(sendintent, invite));
 
 
         // Inflate the layout for this fragment

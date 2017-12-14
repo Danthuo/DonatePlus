@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="bbitb.com.donateplus.Donate"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:name=".Donate"
+    android:label="Donate Form">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

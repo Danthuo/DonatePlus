@@ -84,7 +84,7 @@ public class HomesList extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_homes_list, container, false);
 
-        mlistview = (ListView) view.findViewById(R.id.homes_list_view);
+        mlistview = (ListView) view.findViewById(R.id.list);
 
         //1
         final ArrayList<ChildrensHomes> homeList = ChildrensHomes.getChildrensHomesFromFile("homes.json", getContext());

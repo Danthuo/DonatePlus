@@ -20,9 +20,6 @@ public class HomeMap extends FragmentActivity implements OnMapReadyCallback {
     private GoogleMap mMap;
     private Double passedLong;
     private Double passedLat;
-    private String title;
-    private ViewGroup infoWindow;
-    private TextView infoTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,18 +30,9 @@ public class HomeMap extends FragmentActivity implements OnMapReadyCallback {
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        this.infoWindow = (ViewGroup)getLayoutInflater().inflate(R.layout.custom_infowindow, null);
-
-        this.infoTitle = (TextView)infoWindow.findViewById(R.id.nameTxt);
-
         //Get intent extras
         passedLat = getIntent().getExtras().getDouble("latitude");
         passedLong = getIntent().getExtras().getDouble("longitude");
-        title = this.getIntent().getExtras().getString("title");
-
-        //Longitude
-        //Latitude
-
 
     }
 
@@ -63,45 +51,17 @@ public class HomeMap extends FragmentActivity implements OnMapReadyCallback {
         mMap = googleMap;
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
-        final MapWrapperLayout mapWrapperLayout = (MapWrapperLayout)findViewById(R.id.map_relative_layout);
-        // MapWrapperLayout initialization
-        // 39 - default marker height
-        // 20 - offset between the default InfoWindow bottom edge and it's content bottom edge
-        mapWrapperLayout.init(mMap, getPixelsFromDp(this, 39 + 20));
-        mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
-            @Override
-            public View getInfoWindow(Marker marker) {
-                return null;
-            }
-
-            @Override
-            public View getInfoContents(Marker marker) {
-                // Setting up the infoWindow with current's marker info
-                infoTitle.setText(title);
-
-
-
-                // We must call this to set the current marker and infoWindow references
-                // to the MapWrapperLayout
-                mapWrapperLayout.setMarkerWithInfoWindow(marker, infoWindow);
-                return infoWindow;
-
-            }
-        });
         // Add a marker in Sydney and move the camera
         LatLng home = new LatLng(passedLat, passedLong);;
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(home);
-        markerOptions.title(title);
+
+
         mMap.addMarker(markerOptions);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(home));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(16));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(18));
 
 
     }
 
-    private int getPixelsFromDp(Context context, float dp) {
-        final float scale = context.getResources().getDisplayMetrics().density;
-        return (int)(dp * scale + 0.5f);
-    }
 }
