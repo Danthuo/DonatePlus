@@ -4,18 +4,124 @@
     android:layout_height="match_parent"
     tools:context="bbitb.com.donateplus.Settings">
 
-    <!-- TODO: Update blank fragment layout -->
-    <Button
-        android:id="@+id/buttonLogout"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Log Out"
-        android:textSize="@dimen/regular_font_size"
-        android:textColor="@color/white"
-        android:fontFamily="@font/aileron_bold"
-        android:background="@color/blueD3"
-        android:layout_gravity="center_vertical"
-        android:layout_margin="0dp"
-        style="?android:attr/borderlessButtonStyle" />
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/settings_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="30dp"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="25dp">
+
+            <TextView
+                android:id="@+id/textViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Donate+ User"
+                android:textSize="35dp"
+                android:fontFamily="@font/aileron_ultra_light"
+                android:textColor="@color/blueD0"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/textViewUserEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="user@gmail.com"
+                android:fontFamily="@font/aileron_light"
+                android:textColor="@color/greyD0"
+                android:layout_gravity="center"
+                android:layout_below="@+id/textViewName"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/settings_fields"
+            android:layout_below="@id/settings_header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/editTextDisplayName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:textColorHint="@color/hint_white"
+                android:textSize="@dimen/regular_font_size"
+                android:fontFamily="@font/aileron_light"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:background="@color/blueD1"
+                android:padding="15dp"
+                android:layout_gravity="center_horizontal"/>
+
+            <EditText
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone"
+                android:inputType="textWebPassword"
+                android:textColorHint="@color/hint_white"
+                android:textSize="@dimen/regular_font_size"
+                android:fontFamily="@font/aileron_light"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:background="@color/blueD1"
+                android:padding="15dp"
+                android:layout_below="@id/editTextDisplayName"/>
+
+            <EditText
+                android:id="@+id/Login_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textWebPassword"
+                android:textColorHint="@color/hint_white"
+                android:textSize="@dimen/regular_font_size"
+                android:fontFamily="@font/aileron_light"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:background="@color/blueD1"
+                android:padding="15dp"
+                android:layout_below="@id/phone"/>
+
+
+
+            <Button
+                android:id="@+id/buttonSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:textSize="@dimen/regular_font_size"
+                android:textColor="@color/white"
+                android:fontFamily="@font/aileron_bold"
+                android:background="@color/blueD3"
+                android:layout_margin="0dp"
+                android:layout_below="@id/Login_password"
+                style="?android:attr/borderlessButtonStyle" />
+
+            <Button
+                android:id="@+id/buttonLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Log Out"
+                android:textSize="@dimen/regular_font_size"
+                android:textColor="@color/white"
+                android:fontFamily="@font/aileron_bold"
+                android:background="@color/blueD1"
+                android:layout_gravity="center"
+                android:layout_alignParentBottom="true"
+                style="?android:attr/borderlessButtonStyle" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
 
 </FrameLayout>

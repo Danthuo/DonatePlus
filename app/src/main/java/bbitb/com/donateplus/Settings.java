@@ -4,27 +4,56 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Settings.OnFragmentInteractionListener} interf
+ * {@link Settings.OnFragmentInteractionListener} interface
  * to handle interaction events.
  * Use the {@link Settings#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class Settings extends Fragment implements View.OnClickListener {
 
+
     private FirebaseAuth firebaseAuth;
     private Button buttonLogout;
+
+    private DatabaseReference databaseReference;
+
+
+    private EditText editTextName;
+    private Button buttonSave;
+
+    private TextView textViewUserEmail;
+    private TextView textViewName;
+
+    ProgressBar progressBar;
+
+
 
 
 
@@ -66,6 +95,7 @@ public class Settings extends Fragment implements View.OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ((MainActivity)getActivity()).setActionBarTitle("Settings");
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -73,20 +103,107 @@ public class Settings extends Fragment implements View.OnClickListener {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+
+
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       //return inflater.inflate(R.layout.fragment_settings, container, false);
+        //return inflater.inflate(R.layout.fragment_settings, container, false);
 
 
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
+
+
+        //This can also be put in an onStart method
+        if(firebaseAuth.getCurrentUser() == null){
+            //Login Activity here if user is not logged in
+            getActivity().finish();
+            startActivity(new Intent(getContext(), Login.class));
+
+        }else {
+            FirebaseUser user = firebaseAuth.getCurrentUser();
+            String displayEmail = user.getEmail();
+
+            //View
+            textViewUserEmail = (TextView) view.findViewById(R.id.textViewUserEmail);
+
+            //Set Email
+            textViewUserEmail.setText(displayEmail);
+        }
+
+
+        textViewName = (TextView) view.findViewById(R.id.textViewName);
+        editTextName = (EditText) view.findViewById(R.id.editTextDisplayName);
+        buttonSave = (Button) view.findViewById(R.id.buttonSave);
         buttonLogout = (Button) view.findViewById(R.id.buttonLogout);
+
+        progressBar = view.findViewById(R.id.progress_bar);
+
+        loadUserInformation();
+
         buttonLogout.setOnClickListener(this);
+        buttonSave.setOnClickListener(this);
         return view;
     }
+
+
+    private void saveUserInformation(){
+
+        String displayName = editTextName.getText().toString().trim();
+
+        if(displayName.isEmpty()){
+            editTextName.setError("Name Required");
+            editTextName.requestFocus();
+            return;
+        }
+
+
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+
+        if(user!=null){
+            UserProfileChangeRequest profile = new UserProfileChangeRequest.Builder()
+                    .setDisplayName(displayName)
+                    .build();
+
+            user.updateProfile(profile)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()){
+                                Toast.makeText(getContext(), "Profile Updated", Toast.LENGTH_SHORT).show();
+
+
+                            }
+                        }
+                    });
+        }
+
+    }
+
+    public void loadUserInformation(){
+
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+
+        if(user != null) {
+            if (user.getDisplayName() != null) {
+                textViewName.setText(user.getDisplayName());
+                editTextName.setText(user.getDisplayName());
+
+            }else {
+                textViewName.setText("Donate+ User");
+                editTextName.setText(" ");
+            }
+        }
+
+    }
+
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -131,5 +248,20 @@ public class Settings extends Fragment implements View.OnClickListener {
             startActivity(new Intent(getContext(), Login.class));
         }
 
+
+        if(v == buttonSave){
+            saveUserInformation();
+        }
+
     }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+
+    }
+
+
 }

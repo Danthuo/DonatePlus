@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity
     private FirebaseAuth firebaseAuth;
 
     private TextView textViewUserEmail;
+    private TextView textViewName;
 
 
     @Override
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity
 
         }else {
             FirebaseUser user = firebaseAuth.getCurrentUser();
+            String displayName = user.getDisplayName();
             String displayEmail = user.getEmail();
 
             // NavigationView
@@ -58,9 +60,11 @@ public class MainActivity extends AppCompatActivity
             View mHeaderView =  mNavigationView.inflateHeaderView(R.layout.nav_header_main);
 
             //View
+            textViewName = (TextView) mHeaderView.findViewById(R.id.textViewName);
             textViewUserEmail = (TextView) mHeaderView.findViewById(R.id.textViewUserEmail);
 
             //Set Email
+            textViewName.setText(displayName);
             textViewUserEmail.setText(displayEmail);
 
 
@@ -83,6 +87,17 @@ public class MainActivity extends AppCompatActivity
 
 
         Fragment myfragment = null;
+        Class fragmentClass = HomesList.class;
+
+        try {
+            myfragment = (Fragment) fragmentClass.newInstance();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.fLcontent,myfragment).commit();
 
     }
 
@@ -99,8 +114,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+        return false;
     }
 
     @Override
@@ -189,5 +203,8 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    public void setActionBarTitle(String title) {
+        getSupportActionBar().setTitle(title);
+    }
 
 }
