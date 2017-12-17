@@ -18,8 +18,19 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
+    private static final String USERACC = "https://avrajsingh.000webhostapp.com/donateplus/signup_android.php";
     private Button buttonregister;
     private EditText editTextEmail;
     private EditText editTextPassword;
@@ -59,8 +70,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void registerUser(){
-        String email = editTextEmail.getText().toString().trim();
-        String password = editTextPassword.getText().toString().trim();
+        final String email = editTextEmail.getText().toString().trim();
+        final String password = editTextPassword.getText().toString().trim();
 
         if(TextUtils.isEmpty(email)){
 
@@ -90,6 +101,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                             //user is successfully registered and logged in
                             // we will start the profile activity here
                             //right no display toast only
+                            SendDataToODB();
                             Toast.makeText(SignUp.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
                             progressDialog.hide();
                             finish();
@@ -114,8 +126,33 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
             finish();
             startActivity(new Intent(this, Login.class));
         }
+    }
 
+    public void SendDataToODB()
+    {
+        final String email = editTextEmail.getText().toString().trim();
+        final String password = editTextPassword.getText().toString().trim();
 
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, USERACC,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {}
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {}
+                }){
+            @Override
+            protected Map<String,String> getParams(){
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("email", email);
+                params.put("password", password);
+                return params;
+            }
 
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
     }
 }
