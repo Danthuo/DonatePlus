@@ -29,5 +29,12 @@
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_home_map">Map</string>
 
+    <string name="type_prompt">Select a Type of Donation</string>
+
+    <string-array name="type_array">
+        <item>Food</item>
+        <item>Clothes</item>
+        <item>Money</item>
+    </string-array>
 
 </resources>

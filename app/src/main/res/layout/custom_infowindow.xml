@@ -110,7 +110,8 @@
             android:layout_height="40dip"
             android:text="donate here"
             android:textColor="@color/white"
-            android:background="@color/blueD3"/>
+            android:fontFamily="@font/aileron_bold"
+            android:background="@color/blueD0"/>
 
 
         <!--<Button-->

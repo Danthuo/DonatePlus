@@ -111,16 +111,21 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         this.infoButtonListener = new OnInfoWindowElemTouchListener(infoButton1, getResources().getDrawable(R.drawable.bg_donate_here), getResources().getDrawable(R.drawable.bg_donate_here)){
             @Override
             protected void onClickConfirmed(View v, Marker marker) {
-                Bundle bundle = new Bundle();
-                bundle.putString("InfoTitle", infoTitle.getText().toString());
-                Fragment fragment = new Donate();
-                fragment.setArguments(bundle);
 
-                if(fragment != null){
-                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                    ft.replace(R.id.map_frame_layout,fragment);
-                    ft.commit();
-                }
+                Intent toDonateForm = new Intent(v.getContext(), DonateForm.class);
+                toDonateForm.putExtra("title", infoTitle.getText().toString());
+                startActivity(toDonateForm);
+
+                //Bundle bundle = new Bundle();
+                //bundle.putString("InfoTitle", infoTitle.getText().toString());
+                //Fragment fragment = new Donate();
+                //fragment.setArguments(bundle);
+
+                //if(fragment != null){
+                    //FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                    //ft.replace(R.id.map_frame_layout,fragment);
+                    //ft.commit();
+                //}
             }
         };
 

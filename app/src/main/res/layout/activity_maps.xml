@@ -25,25 +25,34 @@
 
         xmlns:tools="http://schemas.android.com/tools"
 
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
 
         android:layout_height="wrap_content"
 
-        android:orientation="vertical">
+        android:orientation="vertical"
 
-        <Button
+        android:background="@color/white"
+        android:padding="15sp"
+        android:layout_margin="10sp">
 
-            android:id="@+id/btnRestaurant"
-
-            android:layout_width="wrap_content"
-
+        <TextView
+            android:layout_width="150sp"
             android:layout_height="wrap_content"
-
+            android:text="Select drop-off location"
+            android:textSize="25sp"
+            android:textColor="@color/greyD0"
+            android:fontFamily="@font/aileron_ultra_light"
+            android:paddingBottom="10sp"/>
+        <Button
+            android:id="@+id/btnRestaurant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Nearby Malls"
-
+            android:textSize="15sp"
             android:textColor="@color/white"
-
-            android:background="@color/blueD3"/>
+            android:fontFamily="@font/aileron_bold"
+            android:background="@color/blueD0"
+            android:padding="10sp"/>
 
         <!--<Button-->
 
@@ -66,7 +75,7 @@
         <!--android:text="Nearby Malls" />-->
 
         <TextView
-
+            android:visibility="gone"
             android:id="@+id/tv_lat"
 
             android:layout_width="wrap_content"
@@ -74,7 +83,7 @@
             android:layout_height="wrap_content" />
 
         <TextView
-
+            android:visibility="gone"
             android:id="@+id/tv_lng"
 
             android:layout_width="wrap_content"
