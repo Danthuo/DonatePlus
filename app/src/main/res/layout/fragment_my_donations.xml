@@ -4,11 +4,61 @@
     android:layout_height="match_parent"
     tools:context="bbitb.com.donateplus.MyDonations">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:textSize="60sp"
+    <ListView
+        android:id="@+id/donationListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="My Donations Fragment" />
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/noDonationsMessage"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You have not\nmade any\ndonations yet"
+            android:textSize="35sp"
+            android:textColor="@color/blueD_1"
+            android:fontFamily="@font/aileron_ultra_light"
+            android:gravity="center"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/progressBar"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center" >
+
+        <ProgressBar
+            android:id="@+id/progressIcon"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/progressLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loading your\nDonations"
+            android:textSize="35sp"
+            android:textColor="@color/blueD_1"
+            android:fontFamily="@font/aileron_ultra_light"
+            android:gravity="center"
+            android:paddingTop="10sp"
+            android:layout_below="@id/progressIcon"/>
+
+    </RelativeLayout>
 
 </FrameLayout>
