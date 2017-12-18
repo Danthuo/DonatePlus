@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15sp" >
+
+    <TextView
+        android:id="@+id/D_ID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="D_ID"
+        android:fontFamily="@font/aileron_bold"
+        android:textColor="@color/blueD_1"
+        android:textSize="20sp"
+        android:layout_marginRight="15sp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/D_Status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/blueD0"
+        android:text="D_Status"
+        android:textColor="@color/white"
+        android:fontFamily="@font/aileron_bold"
+        android:textAllCaps="true"
+        android:gravity="right"
+        android:padding="10sp"
+        android:layout_alignParentRight="true"/>
+
+    <TextView
+        android:id="@+id/P_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="P_Name"
+        android:textSize="15sp"
+        android:textColor="@color/greyD0"
+        android:fontFamily="@font/aileron_light"
+        android:paddingTop="10sp"
+        android:paddingBottom="5sp"
+        android:layout_below="@id/D_ID" />
+
+    <TextView
+        android:id="@+id/D_Type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="D_Type"
+        android:textColor="@color/greyD0"
+        android:fontFamily="@font/aileron_bold"
+        android:paddingRight="10sp"
+        android:layout_below="@id/P_Name" />
+
+    <TextView
+        android:id="@+id/D_Amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="D_Amount"
+        android:textColor="@color/blueD0"
+        android:fontFamily="@font/aileron_bold"
+        android:layout_below="@id/P_Name"
+        android:layout_toRightOf="@id/D_Type" />
+
+    <TextView
+        android:id="@+id/DropOffLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Drop-Off: "
+        android:textSize="16sp"
+        android:textColor="@color/greyD0"
+        android:fontFamily="@font/aileron_bold"
+        android:layout_marginTop="20sp"
+        android:layout_below="@id/D_Type" />
+
+    <TextView
+        android:id="@+id/D_DropOff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="D_DropOff"
+        android:textSize="16sp"
+        android:textColor="@color/greyD0"
+        android:fontFamily="@font/aileron_light"
+        android:layout_marginTop="20sp"
+        android:layout_toRightOf="@id/DropOffLabel"
+        android:layout_below="@id/D_Type" />
+
+</RelativeLayout>
