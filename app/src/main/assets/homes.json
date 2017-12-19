@@ -106,18 +106,6 @@
 	  "longitude":  36.673390,
 	  "latitude": -1.276584
 	
-    },
-
-    {
-      "title": "Nyumbani",
-      "image" : "http://newlifehometrust.org/images/logo.png",
-      "url": "http://newlifehometrust.org/",
-      "description": "Caring with Compassion",
-      "phone": "+254 722 406064",
-      "email": "info@newlifehometrust.org",
-	  "longitude": 36.7877550,
-	  "latitude":  -1.2825842
-	
     }
   ]
 }

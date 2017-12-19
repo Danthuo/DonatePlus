@@ -30,11 +30,18 @@
     <string name="title_activity_home_map">Map</string>
 
     <string name="type_prompt">Select a Type of Donation</string>
+    <string name="home_prompt">Select a Children\'s Home</string>
 
     <string-array name="type_array">
         <item>Food</item>
         <item>Clothes</item>
         <item>Money</item>
     </string-array>
+
+    <string-array name="home_array">
+        <item>Loading Homes ...</item>
+    </string-array>
+
+    <string name="notf_sub">You\'ll soon be able to stay up-to-date with all your donations with real-time push notifications!</string>
 
 </resources>

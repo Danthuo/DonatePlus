@@ -46,6 +46,7 @@ public class DonateForm extends AppCompatActivity {
     private TextView txt_Form_DropOff;
     private Button btn_Form_Cancel;
     private Button btn_Form_MD;
+    private String homeSelected;
 
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
@@ -67,9 +68,8 @@ public class DonateForm extends AppCompatActivity {
         txt_Form_DropOff = (TextView) findViewById(R.id.txt_Form_DropOff);
 
         txt_Form_DropOff.setText(title);
-
         getHomes();
-        styleSpinners();
+        styleTypes();
 
         addListeners();
     }
@@ -86,6 +86,9 @@ public class DonateForm extends AppCompatActivity {
                                 JSONObject homeOBJ = JSONhomes.getJSONObject(i);
                                 homesList.add(homeOBJ.getString("profileName"));
                             }
+
+                            txt_Form_Home.setAdapter(styleHomes(homesList));
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -133,16 +136,17 @@ public class DonateForm extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
-    public void styleSpinners(){
+    public void styleTypes(){
         txt_Form_Type.setPrompt("Select a Type of Donation");
         ArrayAdapter adapter_types = ArrayAdapter.createFromResource(this, R.array.type_array, R.layout.spinner_item);
         adapter_types.setDropDownViewResource(R.layout.spinner_dropdown_item);
         txt_Form_Type.setAdapter(adapter_types);
+    }
 
-        txt_Form_Home.setPrompt("Select a Childrens Home");
-        ArrayAdapter<String> adapter_homes = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, homesList);
+    public ArrayAdapter styleHomes(List list){
+        ArrayAdapter<String> adapter_homes = new ArrayAdapter<>(this, R.layout.spinner_item, list);
         adapter_homes.setDropDownViewResource(R.layout.spinner_dropdown_item);
-        txt_Form_Home.setAdapter(adapter_homes);
+        return adapter_homes;
     }
 
     public void addListeners(){
@@ -151,6 +155,7 @@ public class DonateForm extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
             }
         });
 
@@ -164,6 +169,7 @@ public class DonateForm extends AppCompatActivity {
                 Toast.makeText(DonateForm.this, "Donated Successfully", Toast.LENGTH_SHORT).show();
                 progressDialog.hide();
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
             }
         });
     }

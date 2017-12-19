@@ -4,11 +4,35 @@
     android:layout_height="match_parent"
     tools:context="bbitb.com.donateplus.Notifications">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:textSize="60sp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Notifications" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center" >
+
+        <TextView
+            android:id="@+id/notf_Heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Feature\nComing Soon"
+            android:textSize="35sp"
+            android:textColor="@color/blueD_1"
+            android:fontFamily="@font/aileron_ultra_light"
+            android:gravity="center"
+            android:layout_below="@id/progressIcon"/>
+
+        <TextView
+            android:id="@+id/notf_sub"
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:text="@string/notf_sub"
+            android:textSize="15sp"
+            android:textColor="@color/greyD0"
+            android:fontFamily="@font/aileron_light"
+            android:paddingTop="10sp"
+            android:gravity="center"
+            android:layout_below="@id/notf_Heading"/>
+
+    </RelativeLayout>
 
 </FrameLayout>

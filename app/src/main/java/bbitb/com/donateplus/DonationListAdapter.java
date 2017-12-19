@@ -43,7 +43,7 @@ public class DonationListAdapter extends ArrayAdapter<donation>{
             TVdonationAmount.setText(donation.getDonationAmount()+" kgs");
         }else if(donation.getDonationType().equals("Money")){
             TVdonationAmount.setText("Kshs. "+donation.getDonationAmount());
-        }else if(donation.getDonationType().equals("Money")){
+        }else if(donation.getDonationType().equals("Clothes")){
             TVdonationAmount.setText(donation.getDonationAmount()+" articles of clothing");
         }
         TVdropOffLoc.setText(donation.getDropOffLoc());
